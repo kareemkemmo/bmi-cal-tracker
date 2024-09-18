@@ -1,0 +1,30 @@
+BMI:
+def bmi_calculation(feet, inches, weight):
+        # calculates BMI
+        bmi = (weight / 2.205) / ((((feet * 12) + inches) * 0.0254)**2)
+        return bmi
+
+BMR (For Calories):
+def bmr_calculation(feet, inches, weight, age, sex):
+    #calculates bmr based on sex to later be passed onto the users activity level
+    height = (feet * 30.48) + (inches * 2.54) #converts from inches to cm
+    if sex == 'Male':
+        bmr = (10 * (weight/2.205)) + (6.25 * height) - (5 * age) + 5
+        return bmr
+    else: 
+        bmr = (10 * (weight/2.205)) + (6.25 * height) - (5 * age) + 161
+        return bmr
+
+Calories:
+def calories_calculation(feet, inches, weight, age, sex, activity):
+    # Calculates the calories for maintaining weight based on activity level
+    if activity == "Little or no exercise":
+        return round(bmr_calculation(feet, inches, weight, age, sex) * 1.2)
+    elif activity == "Exercise 1-3 times/week":
+        return round(bmr_calculation(feet, inches, weight, age, sex) * 1.375)
+    elif activity == "Exercise 3-5 times/week":
+        return round(bmr_calculation(feet, inches, weight, age, sex) * 1.55)
+    elif activity == "Exercise 6-7 times/week":
+        return round(bmr_calculation(feet, inches, weight, age, sex) * 1.725)
+    elif activity == "Very intense exercise or 2x training":
+        return round(bmr_calculation(feet, inches, weight, age, sex) * 1.9)

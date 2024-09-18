@@ -1,0 +1,39 @@
+.name {
+    color: #ed5436;
+}
+
+.main {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.metrics {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.metrics > * {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.bmi {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.calories {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.taipy-table {
+    margin-top: 12px;
+    width: 600px;
+}
